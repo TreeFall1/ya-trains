@@ -19,15 +19,15 @@ const InputEl = st.input`
 border: none;
 background-color: ${(p) => p.$variant == 'clear' ? 'transparent' : "white"};
 border-bottom: ${(p) => p.$isBottomBorder ? "2px solid var(--light-gray)" : "unset"};
-height: 32px;
+height: 20px;
 color: #f1f1f1;
-font-size: 20px;
+font-size: 18px;
 font-weight: 600;
 font-family: "Open Sans", sans-serif;
 
 &::placeholder{
 color: #f1f1f1;
-font-size: 20px;
+font-size: 18px;
 font-weight: 600;
 font-family: "Open Sans", sans-serif;
 }

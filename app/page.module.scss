@@ -1,28 +1,31 @@
 .buy-container{
 	background-color: var(--dark-gray);
 	padding: 12px;
+	-webkit-box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.1);
 }
 
 .box-top{
-	width: 28px;
-	height: 28px;
+	width: 24px;
+	height: 24px;
 	background-color: var(--light-yellow);
-	border-radius: 6px;
+	border-radius: 4px;
 	display: grid;
 	place-items: center;
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .box-down{
-	width: 28px;
-	height: 28px;
+	width: 24px;
+	height: 24px;
 	background-color: var(--light-gray-100);
-	border-radius: 8px;
+	border-radius: 4px;
 	display: grid;
 	place-items: center;
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 16px;
 	color:#fff;
 }
 
@@ -57,12 +60,13 @@
 }
 
 .date-container{
-	margin-top: 16px;
+	margin-top: 12px;
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	color: var(--light-gray-100);
-	font-size: 20px;
+	font-size: 18px;
+	font-weight: 600;
 }
 
 .tickets-section{
@@ -89,4 +93,10 @@
 	position: absolute;
 	top: calc(50% - 21px);
 	left: calc(50% - 21px);
+}
+
+.first-section{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }

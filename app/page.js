@@ -11,7 +11,7 @@ import { Ticket } from "./components/Ticket/Ticket";
 import { Loader } from "./components/Loader/Loader";
 
 export default function Home() {
-	const [route, setRoute] = useState('ticket');
+	const [route, setRoute] = useState('path');
 
 	const renderPage = ()=>{
 		switch(route){
@@ -23,7 +23,7 @@ export default function Home() {
 											<div className={styles['grid-container']}>
 												<div className={styles['first-section']}>
 													<div className={styles['box-top']}>A</div>
-													<Image width={28}  className={styles["up-down-icon"]} src={UpDownIcon} alt='both-sides' />
+													<Image width={22}  className={styles["up-down-icon"]} src={UpDownIcon} alt='both-sides' />
 													<div className={styles['box-down']}>B</div>
 												</div>
 												<div className={styles['main-section']}>
@@ -36,7 +36,7 @@ export default function Home() {
 												</div>
 											</div>
 											<div className={styles['date-container']}>
-												<Image width={28} src={CalendarIcon} alt='choose date' />
+												<Image width={24} src={CalendarIcon} alt='choose date' />
 												<p style={{color: "#fff"}}>Сегодня</p>
 												<p>Завтра</p>
 												<p>Все дни</p>
