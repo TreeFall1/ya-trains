@@ -9,9 +9,9 @@ export const Ticket = (props)=>{
 	const [ticketNumber, setTicketNumber] = useState("");
 	const [date, setDate] = useState("");
 	const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
-	const start = "Всеволожская";
-	const end = "Бернгардовка";
-	const price = 42;
+	const start = props.start;
+	const end = props.end;
+	const price = props.price;
 
 	useEffect(()=>{
 		setTicketNumber(generateTicketNumber());
@@ -28,7 +28,6 @@ export const Ticket = (props)=>{
 		tomorrow && (currentDate.setDate(currentDate.getDate() + 1))
 		return currentDate.toLocaleDateString('ru-RU', options)
 	}
-
 
 	return (
 		<>

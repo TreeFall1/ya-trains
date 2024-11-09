@@ -5,11 +5,12 @@ export const Input = (props)=>{
 	const {
 		variant,
 		placeholder,
-		isBottomBorder
+		isBottomBorder,
+		id
 	} = props;
 
 	return (
-		<InputEl $variant={variant} $isBottomBorder={isBottomBorder} placeholder={placeholder} />
+		<InputEl id={id} $variant={variant} $isBottomBorder={isBottomBorder} placeholder={placeholder} />
 	)
 
 	
