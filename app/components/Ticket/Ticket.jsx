@@ -29,12 +29,17 @@ export const Ticket = (props)=>{
 		return currentDate.toLocaleDateString('ru-RU', options)
 	}
 
+	const deleteTicket = (e)=>{
+		e.stopPropagation();
+		props.deleteTicket(props.ticketId);
+	}
+
 	return (
 		<>
 		<div className={styles['ticket-container']} onClick={handleInfoModal}>
 			<div className={styles['title-container']}>
 				<h1>{`${start} — ${end}`}</h1>
-				<Image width={32} src={TrainIcon} alt='train' />
+				<Image onClick={deleteTicket} width={32} src={TrainIcon} alt='train' />
 			</div>
 			<p className={styles['date']}>{date}</p>
 			<p className={styles['type']}>Билет на электричку стандарт (обычный приго...</p>

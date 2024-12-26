@@ -19,7 +19,7 @@ export const AddTicketModal = (props) => {
 	}
 
 	const getId = (arr)=>{
-		if(arr){
+		if(arr?.length){
 			return parseInt(arr.slice(-1)[0].id)+1
 		} else{
 			return 1;

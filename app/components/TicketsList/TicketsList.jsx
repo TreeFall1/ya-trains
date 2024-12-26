@@ -6,15 +6,25 @@ import { Ticket } from '../Ticket/Ticket';
 
 
 export const TicketsList = ()=>{
-	const [dataset, setDateset] = useState(null);
+	const [dataset, setDataset] = useState(null);
+
 	useEffect(()=>{
-		setDateset(JSON.parse(localStorage.getItem("tickets")))
+		updateDataset();
 	}, [])
+
+	const updateDataset = ()=>{
+		setDataset(JSON.parse(localStorage.getItem("tickets")));
+	}
+
+	const deleteTicket = (ticketId)=>{
+		localStorage.setItem('tickets', JSON.stringify(dataset.filter(el => el.id != ticketId)));
+		updateDataset();
+	}
 
 	return (
 		<div className={styles['tickets-container']}>
 			{dataset && dataset.map((el)=>{
-				return (<Ticket key={el.id} start={el.start} end={el.end} price={el.price} />)
+				return (<Ticket deleteTicket={deleteTicket} ticketId={el.id} key={el.id} start={el.start} end={el.end} price={el.price} />)
 			})}
 		</div>
 	)

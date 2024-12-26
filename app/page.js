@@ -11,6 +11,7 @@ import { Ticket } from "./components/Ticket/Ticket";
 import { Loader } from "./components/Loader/Loader";
 import {AddTicketModal} from "@/app/components/AddTicketModal/AddTicketModal";
 import { TicketsList } from "./components/TicketsList/TicketsList";
+import { deleteAllTickets } from "./utils/utils";
 
 export default function Home() {
 	const [route, setRoute] = useState('path');
@@ -64,6 +65,12 @@ export default function Home() {
 						</div>
 					</div>
 				);
+			case 'settings':
+				return(
+					<div className={styles['settings-container']}>
+						<button onClick={deleteAllTickets} className={styles['setting-button']}>Очистить список билетов</button>
+					</div>
+				)
 			default:
 				return (
 					<>
