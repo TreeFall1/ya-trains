@@ -12,6 +12,7 @@ export const Ticket = (props)=>{
 	const start = props.start;
 	const end = props.end;
 	const price = props.price;
+	const type = props.type
 
 	useEffect(()=>{
 		setTicketNumber(generateTicketNumber());
@@ -42,7 +43,7 @@ export const Ticket = (props)=>{
 				<Image onClick={deleteTicket} width={32} src={TrainIcon} alt='train' />
 			</div>
 			<p className={styles['date']}>{date}</p>
-			<p className={styles['type']}>Билет на электричку стандарт (обычный приго...</p>
+			<p className={styles['type']}>Билет на электричку {type === 'fast' ? '«Ласточка»' : "стандарт (обычный приго..."}</p>
 			<div className={styles['bottom-container']}>
 				<p className={styles['price']}>{`${price} ₽`}</p>
 				<p className={styles['ticket-data']}>{`Билет № ${ticketNumber}`}</p>
@@ -51,7 +52,7 @@ export const Ticket = (props)=>{
 			<div style={{top: '65%', left: '-5px'}} className={styles['circle']}></div>
 			<div style={{top: '65%', right: '-5px'}} className={styles['circle']}></div>
 		</div>
-		{isInfoModalOpen && <TicketInfo ticketNumber={ticketNumber} start={start} end={end} price={price} getDate={getCurrentDate} date={date} closeModal={handleInfoModal} />}
+		{isInfoModalOpen && <TicketInfo type={type} ticketNumber={ticketNumber} start={start} end={end} price={price} getDate={getCurrentDate} date={date} closeModal={handleInfoModal} />}
 		</>
 
 	)

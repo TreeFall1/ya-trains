@@ -4,6 +4,7 @@ import BackIcon from '@/public/back.svg'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import TrainIcon from '@/public/train.svg'
+import TrainFastIcon from '@/public/train-fast.svg'
 import Barcode from '@/public/barcode.png'
 
 export const TicketInfo = (props) =>{
@@ -32,7 +33,7 @@ export const TicketInfo = (props) =>{
 					<div>
 						<div className={styles['title-container']}>
 							<p className={styles['title']}>{`${props.start} — ${props.end}`}</p>
-							<Image width={32} src={TrainIcon} alt='train icon' />
+							<Image style={props.type === 'fast' ? {filter: "none", opacity: 1} : {filter: "invert(1)", opacity: .75}} width={32} src={props.type === 'fast' ? TrainFastIcon : TrainIcon} alt='train icon' />
 						</div>
 						<p className={styles['date']}>{`${props.date}`}</p>
 						<p className={styles['date-subtext']}>{`Действует до 01:00 ${date}`}</p>
@@ -40,7 +41,7 @@ export const TicketInfo = (props) =>{
 							<Image onClick={handleClick} className={`${flipped ? styles.flipped : ''}`} src={Barcode} alt='barcode' />
 						</div>
 						<p className={styles[['type']]}>Полный, в одну сторону</p>
-						<p className={styles['type-subtext']}>Билет на электричку стандарт (обычный <br /> пригородный поезд)</p>
+						<p className={styles['type-subtext']}>Билет на электричку {props.type === 'fast' ? '«Ласточка»' : "стандарт (обычный приго..."}</p>
 					</div>
 					<div className={styles['data-bar']}>
 						<p className={styles['price']}>{`${props.price} ₽`}</p>

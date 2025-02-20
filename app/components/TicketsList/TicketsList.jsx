@@ -24,7 +24,7 @@ export const TicketsList = ()=>{
 	return (
 		<div className={styles['tickets-container']}>
 			{dataset && dataset.map((el)=>{
-				return (<Ticket deleteTicket={deleteTicket} ticketId={el.id} key={el.id} start={el.start} end={el.end} price={el.price} />)
+				return (<Ticket deleteTicket={deleteTicket} type={el.type} ticketId={el.id} key={el.id} start={el.start} end={el.end} price={el.price} />)
 			})}
 		</div>
 	)
